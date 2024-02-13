@@ -38,6 +38,10 @@ export default defineConfig({
         { label: 'Customization', items: [
           { label: 'Default Theme Usage', autogenerate: { directory: 'docs/customization/theme-default'}, },
         ]},
+        { label: 'Ghost HTML Processor', badge: { text: "NEW", variant: "success", }, items: [
+          { label: "Introduction", link: '/docs/renderutil/introduction'},
+          { label: "Examples", link: '/docs/renderutil/examples'},
+        ], },
         { label: 'Themes', badge: { text: 'NPM-Module', variant: 'tip' }, items: [
           { label: 'Catppuccin Theme', autogenerate: { directory: 'docs/themes/catppuccin'}, },
           { label: 'Brutal by Elian Theme', badge: { text: 'NEW', variant: 'success' }, autogenerate: { directory: 'docs/themes/brutalbyelian'}, },
