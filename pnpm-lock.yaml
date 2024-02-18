@@ -20,6 +20,9 @@ dependencies:
   astro:
     specifier: ^4.3.5
     version: 4.4.0(typescript@5.3.3)
+  astro-robots-txt:
+    specifier: ^1.0.0
+    version: 1.0.0
   entities:
     specifier: ^4.5.0
     version: 4.5.0
@@ -1281,6 +1284,13 @@ packages:
       remark-expressive-code: 0.32.4
     dev: false
 
+  /astro-robots-txt@1.0.0:
+    resolution: {integrity: sha512-6JQSLid4gMhoWjOm85UHLkgrw0+hHIjnJVIUqxjU2D6feKlVyYukMNYjH44ZDZBK1P8hNxd33PgWlHzCASvedA==}
+    dependencies:
+      valid-filename: 4.0.0
+      zod: 3.22.4
+    dev: false
+
   /astro@4.4.0(typescript@5.3.3):
     resolution: {integrity: sha512-JAsMrm1Z6W4Iqg9Q7LW/6lCXrqa4jndEOlR/yu7NGNP0BrPwSM8i4+yzya6hxgsNvyyVK8ywthaNhFmqd8Z+cg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
@@ -1993,6 +2003,11 @@ packages:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
     dependencies:
       reusify: 1.0.4
+    dev: false
+
+  /filename-reserved-regex@3.0.0:
+    resolution: {integrity: sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
   /fill-range@7.0.1:
@@ -4599,6 +4614,13 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: false
+
+  /valid-filename@4.0.0:
+    resolution: {integrity: sha512-VEYTpTVPMgO799f2wI7zWf0x2C54bPX6NAfbZ2Z8kZn76p+3rEYCTYVYzMUcVSMvakxMQTriBf24s3+WeXJtEg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      filename-reserved-regex: 3.0.0
     dev: false
 
   /vfile-location@4.1.0:

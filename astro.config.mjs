@@ -4,6 +4,7 @@ import starlightBlog from 'starlight-blog';
 import tailwind from '@astrojs/tailwind';
 import fs from 'node:fs';
 import { ExpressiveCodeTheme } from '@astrojs/starlight/expressive-code';
+import robotsTxt from 'astro-robots-txt';
 
 const hThemeFile = './houston.jsonc';
 const hFileSync = fs.readFileSync(
@@ -131,5 +132,6 @@ export default defineConfig({
 		tailwind({
 			applyBaseStyles: false,
 		}),
+		robotsTxt(),
 	],
 });
