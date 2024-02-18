@@ -27,7 +27,7 @@ export default defineConfig({
 			},
 			lastUpdated: true,
 			favicon: 'spaceghost.png',
-			customCss: [ './src/tailwind.css' ],
+			customCss: [ './src/styles/tailwind.css' ],
 			components: {
 				SiteTitle: './src/components/starlight/SiteTitle.astro',
 				ThemeSelect: './src/components/starlight/ThemeSelect.astro',
