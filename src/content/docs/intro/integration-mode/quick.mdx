@@ -4,8 +4,10 @@ description: Quick Install
 sidebar:
   order: 1
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
+<Tabs>
+  <TabItem label="npm">
 ```sh title="Simple"
 # Run this command and follow the prompt!
 npx @matthiesenxyz/create-astro-ghostcms
@@ -18,6 +20,39 @@ npx @matthiesenxyz/create-astro-ghostcms
 ```sh title="Advanced"
 npx @matthiesenxyz/create-astro-ghostcms <template> <project_directory> --git --install
 ```
+  </TabItem>
+
+  <TabItem label="pnpm">
+```sh title="Simple"
+# Run this command and follow the prompt!
+pnpm dlx @matthiesenxyz/create-astro-ghostcms
+# Want to pass arguments through to the command?  YOU CAN!
+#  `--install`     : Sets Install Dependencies to 'true'
+#  `--git`         : Initiates git Repo
+#  `--pkg-manager` : Specify your Package manager(i.e. npm, yarn | DEFAULT: pnpm)
+```
+
+```sh title="Advanced"
+pnpm dlx @matthiesenxyz/create-astro-ghostcms <template> <project_directory> --git --install
+```
+  </TabItem>
+
+  <TabItem label="yarn">
+```sh title="Simple"
+# Run this command and follow the prompt!
+yarn dlx @matthiesenxyz/create-astro-ghostcms
+# Want to pass arguments through to the command?  YOU CAN!
+#  `--install`     : Sets Install Dependencies to 'true'
+#  `--git`         : Initiates git Repo
+#  `--pkg-manager` : Specify your Package manager(i.e. npm, yarn | DEFAULT: pnpm)
+```
+
+```sh title="Advanced"
+yarn dlx @matthiesenxyz/create-astro-ghostcms <template> <project_directory> --git --install
+```
+  </TabItem>
+
+</Tabs>
 
 <Aside>
 ***When you deploy your install dont forget to set your ENVIRONMENT VARIABLES!***

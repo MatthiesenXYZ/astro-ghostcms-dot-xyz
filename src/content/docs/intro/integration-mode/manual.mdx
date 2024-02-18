@@ -4,26 +4,94 @@ description: Manual Install
 sidebar:
   order: 2
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 ## Install
 
-```sh
-# For fresh Install
-npm create astro@latest
-# Create Empty Install with standard typescript
-# Then Delete entire `pages` folder under `/src/`
+The Best way to install Astro-GhostCMS is from a fresh install.  To get started run the following
 
-# Then run one of the following:
-# Astro Quick mode
-npx astro add @matthiesenxyz/astro-ghostcms
-# Manual Method
-npm i @matthiesenxyz/astro-ghostcms
-```
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm create astro@latest
+    # Create Empty Install with standard typescript
+    # Then Delete entire `pages` folder under `/src/`
+    ```
 
-Then set your `astro.config.ts` to look like this:
+Then run the following to install the package!
 
-```ts frame="code" title="astro.config.ts"
+    <Tabs>
+      <TabItem label="Astro `add` method">
+        ```sh
+        # Astro Quick mode
+        npx astro add @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+      <TabItem label="Manual pkg Install">
+        ```sh
+        # Manual Method
+        npm install @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm create astro@latest
+    # Create Empty Install with standard typescript
+    # Then Delete entire `pages` folder under `/src/`
+    ```
+    
+Then run the following to install the package!
+
+    <Tabs>
+      <TabItem label="Astro `add` method">
+        ```sh
+        # Astro Quick mode
+        pnpm astro add @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+      <TabItem label="Manual pkg Install">
+        ```sh
+        # Manual Method
+        pnpm add @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem label="yarn">
+    ```sh
+    yarn create astro
+    # Create Empty Install with standard typescript
+    # Then Delete entire `pages` folder under `/src/`
+    ```
+    
+Then run the following to install the package!
+
+    <Tabs>
+      <TabItem label="Astro `add` method">
+        ```sh
+        # Astro Quick mode
+        yarn astro add @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+      <TabItem label="Manual pkg Install">
+        ```sh
+        # Manual Method
+        yarn add @matthiesenxyz/astro-ghostcms
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+</Tabs>
+
+
+Then set your `astro.config.mjs` to look like this:
+
+```ts frame="code" title="astro.config.mjs"
 import { defineConfig } from "astro/config";
 import GhostCMS from '@matthiesenxyz/astro-ghostcms';
 

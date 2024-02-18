@@ -4,15 +4,29 @@ description: Install
 sidebar:
   order: 1
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 # API Only Install
 
 In this mode the integration will not deploy routes at all.  you will have to build your own website to utilize the exported functions listed below.
 
-```sh
-npm i @matthiesenxyz/astro-ghostcms
-```
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm install @matthiesenxyz/astro-ghostcms
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm add @matthiesenxyz/astro-ghostcms
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```sh
+    yarn add @matthiesenxyz/astro-ghostcms
+    ```
+  </TabItem>
+</Tabs>
 
 You must also create 2 environment variables in a `.env` file with the following:
 

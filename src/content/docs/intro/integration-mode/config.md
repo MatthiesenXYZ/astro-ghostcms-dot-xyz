@@ -5,9 +5,9 @@ sidebar:
   order: 3
 ---
 
-Theme config option in `astro.config.ts` looks like this:
+Theme config option in `astro.config.mjs` looks like this:
 
-```ts frame="code" title="astro.config.ts"
+```ts frame="code" title="astro.config.mjs"
 import { defineConfig } from "astro/config";
 import GhostCMS from '@matthiesenxyz/astro-ghostcms';
 

@@ -4,26 +4,61 @@ description: How to install the Catppuccin theme
 sidebar:
   order: 2
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Demo">
-[Catppuccin Demo](https://catppuccindark-demo.astro-ghostcms.xyz/)
-</Aside>
+<LinkCard
+  title="Demo"
+  href="https://catppuccindark-demo.astro-ghostcms.xyz/"
+  description="Live Demo of Catppuccin Theme"
+/>
+
 
 ## Install
 
-```sh
-# For fresh Install
-npm create astro@latest
-# Create Empty Install with standard typescript
-# Then Delete entire `pages` folder under `/src/`
+<Tabs>
+  <TabItem label="npm">
+	```sh
+	# For fresh Install
+	npm create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
 
-# Then run the following:
+	# Then run the following:
 
-npx astro add @matthiesenxyz/astro-ghostcms tailwind
+	npx astro add @matthiesenxyz/astro-ghostcms tailwind
 
-npm i @matthiesenxyz/astro-ghostcms/astro-ghostcms-catppuccin
-```
+	npm install @matthiesenxyz/astro-ghostcms-catppuccin
+	```
+  </TabItem>
+  <TabItem label="pnpm">
+	```sh
+	# For fresh Install
+	pnpm create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
+
+	# Then run the following:
+
+	pnpm astro add @matthiesenxyz/astro-ghostcms tailwind
+
+	pnpm add @matthiesenxyz/astro-ghostcms-catppuccin
+	```
+  </TabItem>
+  <TabItem label="yarn">
+	```sh
+	# For fresh Install
+	yarn create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
+
+	# Then run the following:
+
+	yarn astro add @matthiesenxyz/astro-ghostcms tailwind
+
+	yarn add @matthiesenxyz/astro-ghostcms-catppuccin
+	```
+  </TabItem>
+</Tabs>
 
 Then set your `astro.config.ts` to look like this:
 
@@ -44,33 +79,58 @@ export default defineConfig({
 });
 ```
 
-## Setup Tailwind
+## Setup Tailwind 
 
-There are multiple color options with Catppuccin.  This theme defaults to one of the 3 darker themes.  The themes in order are 
+| Catppuccin Themes | Default? |
+| ----------------- | -------- |
+| Latte (Light)     |          |
+| Frappe (Light Dark) |        |
+| Macchiato (Dark Light) | **TRUE** |
+| Mocha (Darkest) |            |
 
-- Latte (Light) 
-- Frappe (Light Dark)
-- Macchiato (Dark Light) *DEFAULT*
-- Mocha (Darkest)
+<Tabs>
+	<TabItem label="Default">
+		```ts frame="code" title="tailwind.config.cjs"
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+			presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin')] 
+		};
+		```
+	</TabItem>
+	<TabItem label="Latte">
+		```ts frame="code" title="tailwind.config.cjs"
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+			presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin/latte')] 
+		};
+		```
+	</TabItem>
+	<TabItem label="Frappe">
+		```ts frame="code" title="tailwind.config.cjs"
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+			presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin/frappe')] 
+		};
+		```
+	</TabItem>
+	<TabItem label="Macchiato">
+		```ts frame="code" title="tailwind.config.cjs"
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+			presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin/frappe')] 
+		};
+		```
+	</TabItem>
+	<TabItem label="Mocha">
+		```ts frame="code" title="tailwind.config.cjs"
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+			presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin/mocha')] 
+		};
+		```
+	</TabItem>
+</Tabs>
 
-### To use Default options just call the theme's Node Module
-
-```ts frame="code" title="tailwind.config.cjs"
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin')] 
-};
-```
-
-### To use Specific options call the theme's Node Module `/` the color option lowercase
-
-```ts frame="code" title="tailwind.config.cjs"
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-	// OTHER OPTIONS ARE: `/frappe`, `/macchiato`, or `/mocha`
-	presets: [require('@matthiesenxyz/astro-ghostcms-catppuccin/latte')] 
-};
-```
 
 ## Setup `.env` variables
 

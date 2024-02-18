@@ -4,28 +4,69 @@ description: How to install the Brutal by Elian Theme
 sidebar:
   order: 2
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Demo">
-[Brutal Demo](https://brutal-demo.astro-ghostcms.xyz/)
-</Aside>
+<LinkCard
+  title="Demo"
+  href="https://brutal-demo.astro-ghostcms.xyz/"
+  description="Live Demo of BrutalbyElian Theme"
+/>
 
 ## Install
 
-```sh
-# For fresh Install
-npm create astro@latest
-# Create Empty Install with standard typescript
-# Then Delete entire `pages` folder under `/src/`
+<Tabs>
+  <TabItem label="npm">
+	```sh
+	# For fresh Install
+	npm create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
+	```
+	
+	Then run the following:
+	
+	```sh
 
-# Then run the following:
+	npx astro add @matthiesenxyz/astro-ghostcms
 
-npx astro add @matthiesenxyz/astro-ghostcms
+	npm install @matthiesenxyz/astro-ghostcms-brutalbyelian @unocss/astro @unocss/reset postcss unocss
+	```
+  </TabItem>
+  <TabItem label="pnpm">
+	```sh
+	# For fresh Install
+	pnpm create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
+	```
+	
+	Then run the following:
+	
+	```sh
 
-npm i @matthiesenxyz/astro-ghostcms/astro-ghostcms-brutalbyelian @unocss/astro
+	pnpm astro add @matthiesenxyz/astro-ghostcms
 
-npm i -D @unocss/reset postcss unocss
-```
+	pnpm add @matthiesenxyz/astro-ghostcms-brutalbyelian @unocss/astro @unocss/reset postcss unocss
+	```
+  </TabItem>
+  <TabItem label="yarn">
+	```sh
+	# For fresh Install
+	yarn create astro@latest
+	# Create Empty Install with standard typescript
+	# Then Delete entire `pages` folder under `/src/`
+	```
+	
+	Then run the following:
+	
+	```sh
+
+	yarn astro add @matthiesenxyz/astro-ghostcms
+
+	yarn add@matthiesenxyz/astro-ghostcms-brutalbyelian @unocss/astro @unocss/reset postcss unocss
+	```
+  </TabItem>
+</Tabs>
 
 Then set your `astro.config.ts` to look like this:
 

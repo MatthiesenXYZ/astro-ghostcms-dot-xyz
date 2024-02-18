@@ -22,9 +22,7 @@ export default defineConfig({
 				src: './src/assets/spaceghost.png',
 				alt: "Spaceghost"
 			},
-			editLink: {
-				baseUrl: 'https://github.com/MatthiesenXYZ/astro-ghostcms-dot-xyz/edit/main/'
-			},
+			editLink: { baseUrl: 'https://github.com/MatthiesenXYZ/astro-ghostcms-dot-xyz/edit/main/' },
 			lastUpdated: true,
 			favicon: 'spaceghost.png',
 			customCss: [ './src/styles/tailwind.css' ],
@@ -33,9 +31,7 @@ export default defineConfig({
 				ThemeSelect: './src/components/starlight/ThemeSelect.astro',
 				Head: './src/components/starlight/Head.astro'
 			},
-			expressiveCode: {
-				themes: [houston],
-			},
+			expressiveCode: { themes: [houston] },
 			plugins: [starlightBlog({
 				authors: {
 					adam: {
@@ -51,81 +47,25 @@ export default defineConfig({
 				github: 'https://github.com/MatthiesenXYZ/astro-ghostcms',
 				gitlab: 'https://gitlab.com/matthiesenxyz/astro-ghostcms',
 			},
-			sidebar: [
-				{
-					label: 'Introduction',
-					items: [
-						{
-							label: 'Getting Started',
-							link: '/intro'
-						},
-						{
-							label: 'Normal Mode',
-							badge: {
-								text: 'Easy',
-								variant: 'default'
-							},
-							autogenerate: { 
-								directory: '/intro/integration-mode' 
-							}
-						},
-						{
-							label: 'API Mode',
-							collapsed: true,
-							badge: {
-								text: 'Advanced',
-								variant: 'default'
-							},
-							autogenerate: { 
-								directory: '/intro/api-mode' 
-							}
-						},
+			sidebar: [ { 
+				label: 'Introduction', items: [
+					{ label: 'Getting Started', link: '/intro' },
+					{ label: 'Normal Mode',	badge: { text: 'Easy', variant: 'default' }, autogenerate: { directory: '/intro/integration-mode' }, },
+					{ label: 'API Mode', collapsed: true, badge: { text: 'Advanced', variant: 'default'	}, autogenerate: { directory: '/intro/api-mode'	} },
 					],
-				},
-				{
-					label: 'Themes',
-					items: [
-						{
-							label: 'Default Theme',
-							autogenerate: {
-								directory: '/themes/default'
-							},
-						},
-						{
-							label: 'Catppuccin',
-							autogenerate: {
-								directory: '/themes/catppuccin'
-							},
-						},
-						{
-							label: 'Brutal by Elian',
-							autogenerate: {
-								directory: '/themes/brutal'
-							},
-						},
+				}, {
+				label: 'Themes', items: [
+					{ label: 'Default Theme', autogenerate: { directory: '/themes/default' }, },
+					{ label: 'Catppuccin', autogenerate: { directory: '/themes/catppuccin' }, },
+					{ label: 'Brutal by Elian',	autogenerate: {	directory: '/themes/brutal'	}, },
 					],
-				},
-				{
-					label: 'Tools & Extras',
-					items: [
-						{
-							label: 'Ghost Render Util',
-							collapsed: true,
-							badge: {
-								text: 'NEW',
-								variant: 'success'
-							},
-							autogenerate: {
-								directory: '/tools/contentrender'
-							}
-						},
+				}, {
+				label: 'Tools & Extras',
+				items: [
+					{ label: 'Ghost Render Util', collapsed: true, badge: { text: 'NEW', variant: 'success' }, autogenerate: { directory: '/tools/contentrender' } },
 					],
-				},
-				{
-					label: 'Changelogs',
-					autogenerate: {
-						directory: '/changelogs'
-					},
+				}, { 
+				label: 'Changelogs', autogenerate: { directory: '/changelogs' },
 				},
 			],
 		}),

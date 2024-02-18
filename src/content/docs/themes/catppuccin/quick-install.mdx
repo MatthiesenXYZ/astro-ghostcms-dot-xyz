@@ -4,14 +4,45 @@ description: How to install the Catppuccin Dark theme
 sidebar:
   order: 1
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem, LinkCard } from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Demo">
-[Catppuccin Demo](https://catppuccindark-demo.astro-ghostcms.xyz/)
-</Aside>
+<LinkCard
+  title="Demo"
+  href="https://catppuccindark-demo.astro-ghostcms.xyz/"
+  description="Live Demo of Catppuccin Theme"
+/>
 
 ### To Quickly get started with this theme just run the following command
 
-```sh
-npx @matthiesenxyz/create-astro-ghostcms catppuccin 
-```
+<Tabs>
+  <TabItem label="npm">
+    ```sh title="Simple"
+    # Run this command and follow the prompt!
+    npx @matthiesenxyz/create-astro-ghostcms catppuccin 
+    # Want to pass arguments through to the command?  YOU CAN!
+    #  `--install`     : Sets Install Dependencies to 'true'
+    #  `--git`         : Initiates git Repo
+    #  `--pkg-manager` : Specify your Package manager(i.e. npm, yarn | DEFAULT: pnpm)
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh title="Simple"
+    # Run this command and follow the prompt!
+    pnpm dlx @matthiesenxyz/create-astro-ghostcms catppuccin 
+    # Want to pass arguments through to the command?  YOU CAN!
+    #  `--install`     : Sets Install Dependencies to 'true'
+    #  `--git`         : Initiates git Repo
+    #  `--pkg-manager` : Specify your Package manager(i.e. npm, yarn | DEFAULT: pnpm)
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```sh title="Simple"
+    # Run this command and follow the prompt!
+    yarn dlx @matthiesenxyz/create-astro-ghostcms catppuccin 
+    # Want to pass arguments through to the command?  YOU CAN!
+    #  `--install`     : Sets Install Dependencies to 'true'
+    #  `--git`         : Initiates git Repo
+    #  `--pkg-manager` : Specify your Package manager(i.e. npm, yarn | DEFAULT: pnpm)
+    ```
+  </TabItem>
+</Tabs>
