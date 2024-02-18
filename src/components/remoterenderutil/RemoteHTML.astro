@@ -1,22 +1,20 @@
 ---
 import type { SanitizeOptions } from 'ultrahtml/transformers/sanitize'
-import { createComponentProxy, markdown } from '../lib/utils';
-import type { MarkedExtension } from 'marked';
+import { createComponentProxy, html } from '../../lib/utils';
 
 export interface Props {
   content?: string;
   sanitize?: SanitizeOptions;
   components?: Record<string, any>;
-  markedExt?: MarkedExtension[]
 }
 
 const input = Astro.props.content ?? await Astro.slots.render('default');
 if (!input) {
-  throw new Error('Unable to render <Markdown> without a content prop or children')
+  throw new Error('Unable to render <Markup> without a content prop or children')
 }
 // @ts-ignore
 const components = createComponentProxy($$result, Astro.props.components);
-const content = await markdown(input, { components }, Astro.props.markedExt);
+const content = await html(input, { sanitize: Astro.props.sanitize, components });
 ---
 
 <Fragment set:html={content} />

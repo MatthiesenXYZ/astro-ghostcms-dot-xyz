@@ -30,6 +30,7 @@ export default defineConfig({
 			components: {
 				SiteTitle: './src/components/starlight/SiteTitle.astro',
 				ThemeSelect: './src/components/starlight/ThemeSelect.astro',
+				Head: './src/components/starlight/Head.astro'
 			},
 			expressiveCode: {
 				themes: [houston],
