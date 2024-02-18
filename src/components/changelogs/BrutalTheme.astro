@@ -1,0 +1,13 @@
+---
+import Markdown from '../remoterenderutil/RemoteMarkdown.astro';
+import CodeSpan from '../remotecomponets/CodeSpan.astro';
+import CodeBlock from '../remotecomponets/CodeBlock.astro';
+import Heading from '../remotecomponets/Heading.astro';
+import Note from '../remotecomponets/Note.astro';
+
+const readme = await fetch('https://raw.githubusercontent.com/MatthiesenXYZ/astro-ghostcms/main/packages/astro-ghostcms-brutalbyelian/CHANGELOG.md').then((res)=>res.text());
+---
+<Markdown
+    content={readme}
+    components={{ Heading, CodeBlock, CodeSpan, Note }}
+    />

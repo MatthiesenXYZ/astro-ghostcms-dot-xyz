@@ -1,0 +1,13 @@
+---
+title: Templates
+description: Templates
+sidebar:
+  order: 3
+  badge:
+    text: DIY
+    variant: note
+---
+
+## We now have templates to get started with!
+
+- [Basic Starter Kit](https://github.com/MatthiesenXYZ/astro-ghostcms-basicstarterkit): This is a Public Template repo that users are free to copy and modify to their hearts content.
