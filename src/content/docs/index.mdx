@@ -1,0 +1,67 @@
+---
+title: Astro-GhostCMS
+description: Easily migrate your Ghost Site to Astro, an Astro Integration & API that turns your Ghost server into a Headless CMS
+template: splash
+hero:
+  tagline: Easily migrate your Ghost Site to Astro, an Astro Integration & API that turns your Ghost server into a Headless CMS!
+  image:
+    file: ../../assets/spaceghost.png
+  actions:
+    - text: Get Started
+      link: /intro
+      icon: right-arrow
+      variant: primary
+    - text: Check the Repo
+      link: https://github.com/MatthiesenXYZ/astro-ghost
+      icon: github
+---
+import gitkrakenlogo from '../../assets/gitkraken-logo.svg'
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Astro-GhostCMS is an Astro v4 Integration and API, its purpose is to create a easy way to bring your GhostCMS content into the Astro world. Create super fast websites, and customize to your hearts content. With the content being pulled from your headless GhostCMS install, all you do is build the layout with the info you want and your on your way!
+
+
+<CardGrid stagger>
+	<LinkCard 
+		title="Learn more about Astro-GhostCMS"
+		description="More information about how this integration works."
+		href="/intro"
+	/>
+	<LinkCard 
+		title="Integration Quick Start"
+		description="Quickly get started with Astro-GhostCMS with our Create Astro GhostCMS CLI Utility"
+		href="/intro/integration-mode/quick/"
+	/>
+	<LinkCard 
+		title="API-Only Mode"
+		description="Want the FULL Astro Experience and just import just the ghost blog posts, while keeping everything else on Astro?"
+		href="/intro/api-mode/install/"
+	/>
+	<LinkCard 
+		title="Our Posts"
+		description="Looking for our Posts/Updates?  Look here!"
+		href="/blog"
+	/>
+	<LinkCard 
+		title="Looking for Changelogs?"
+		description="View the Changelogs for each component of the Astro-GhostCMS eco-system"
+		href="/changelogs"
+	/>
+	<LinkCard 
+		title="Learn more about GhostCMS"
+		description="Learn more about the Ghost Project,  a powerful app for professional publishers to create, share, and grow a business around their content."
+		href="https://ghost.org"
+	/>
+</CardGrid>
+
+*Astro-GhostCMS is an independently maintained project and **NOT** made or provided by [Ghost](https://ghost.org) or [Astro](https://astro.build/), and is intended to help create a easier method to utilize custom TypeScript tools to link a Headless GhostCMS install in to your Astro project.*
+
+*Ghost is a trademark of [The Ghost Foundation](https://ghost.org/trademark/).*
+
+## Tools & Software
+
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/small.svg)](https://starlight.astro.build)
+
+[<img src={gitkrakenlogo.src} width="300px" title="Maintained with GitKraken" alt="Maintained with GitKraken"/>](https://www.gitkraken.com/invite/hirocQWn)
