@@ -52,6 +52,7 @@ export default defineConfig({
 					{ label: 'Getting Started', link: '/intro' },
 					{ label: 'Normal Mode',	badge: { text: 'Easy', variant: 'default' }, autogenerate: { directory: '/intro/integration-mode' }, },
 					{ label: 'API Mode', collapsed: true, badge: { text: 'Advanced', variant: 'default'	}, autogenerate: { directory: '/intro/api-mode'	} },
+					{ label: 'Starlight Plugin', badge: { text: 'NEW', variant: 'success' }, autogenerate: { directory: '/intro/starlight' } },
 					],
 				}, {
 				label: 'Themes', items: [

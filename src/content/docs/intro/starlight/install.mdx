@@ -1,0 +1,71 @@
+---
+title: Getting started
+description: Getting started with our starlight plugin
+sidebar:
+  order: 1
+---
+import { Aside, Tabs, TabItem, LinkCard } from '@astrojs/starlight/components';
+
+<LinkCard
+  title="Demo"
+  href="#"
+  description="Live Demo of Starlight-GhostCMS in action **COMING SOON**"
+/>
+## Prerequisites: 
+
+1. You will need to have a Starlight Website Setup.  If you dont have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+2. You will need a GhostCMS server, and your `CONTENT_API_KEY` & `CONTENT_API_URL`.  Your GhostCMS server must also support the `v5` Version of the GhostAPI.  If you dont already have your Key and Url, you can find out how to get those on the Ghost docs [HERE](https://ghost.org/docs/content-api/)
+
+### Install the plugin
+
+Starlight GhostCMS is a Starlight [plugin](https://starlight.astro.build/reference/plugins/).  Install it using your favorite package manager.  Below is 3 examples of what to run.  **CHOOSE ONE**.
+
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm install @matthiesenxyz/starlight-ghostcms
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm add @matthiesenxyz/starlight-ghostcms
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```sh
+    yarn add @matthiesenxyz/starlight-ghostcms
+    ```
+  </TabItem>
+</Tabs>
+
+### Configure the pluign
+
+The Starlight GhostCMS plugin can be configured in your Starlight [configuration](https://starlight.astro.build/reference/configuration/#plugins) in the `astro.config.mjs` file.
+
+```ts title="astro.config.mjs"
+import starlight from '@astrojs/starlight'
+import { defineConfig } from 'astro/config'
+import starlightGhostCMS from '@matthiesenxyz/starlight-ghostcms';
+
+export default defineConfig({
+  integrations: [
+    starlight({
+      plugins: [starlightGhostCMS()],
+      title: 'My Docs',
+    }),
+  ],
+})
+```
+
+### Set your GhostCMS ENV Variables
+
+You must also create 2 environment variables in a `.env` file with the following:
+
+```ansi frame="code" title=".env"
+[1;31mCONTENT_API_KEY[0m=[33ma33da3965a3a9fb2c6b3f63b48
+[1;31mCONTENT_API_URL[0m=[33mhttps://ghostdemo.matthiesen.xyz
+```
+
+<Aside>
+***When you deploy your install dont forget to set the above ENVIRONMENT VARIABLES!***
+</Aside>
