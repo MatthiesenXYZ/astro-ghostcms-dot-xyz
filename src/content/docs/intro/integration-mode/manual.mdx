@@ -3,120 +3,97 @@ title: Manual Install
 description: Manual Install
 sidebar:
   order: 2
+  badge: 
+    text: Astro Method
+    variant: tip
 ---
-import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 
 ## Install
 
-The Best way to install Astro-GhostCMS is from a fresh install.  To get started run the following
+The Best way to install Astro-GhostCMS is from a fresh install.  To get started run the following depending on your package manager of choice.
 
-<Tabs>
-  <TabItem label="npm">
-    ```sh
-    npm create astro@latest
-    # Create Empty Install with standard typescript
-    # Then Delete entire `pages` folder under `/src/`
-    ```
+<Steps>
 
-Then run the following to install the package!
+1. First create a new Astro install with the following command. Then delete the entire `/pages` folder under `/src/`:
 
-    <Tabs>
-      <TabItem label="Astro `add` method">
-        ```sh
-        # Astro Quick mode
-        npx astro add @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-      <TabItem label="Manual pkg Install">
-        ```sh
-        # Manual Method
-        npm install @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-    </Tabs>
+   <Tabs>
+   <TabItem label="npm" icon="seti:npm">
+   ```sh
+   npm create astro@latest
+   ```
+   </TabItem>
+   <TabItem label="pnpm" icon="pnpm">
+   ```sh
+   pnpm create astro@latest
+   ```
+   </TabItem>
+   <TabItem label="yarn" icon="seti:yarn">
+   ```sh
+   yarn create astro@latest
+   ```
+   </TabItem>
+   </Tabs>
 
-  </TabItem>
-  <TabItem label="pnpm">
-    ```sh
-    pnpm create astro@latest
-    # Create Empty Install with standard typescript
-    # Then Delete entire `pages` folder under `/src/`
-    ```
-    
-Then run the following to install the package!
+2. Then run the following to install the package!
 
-    <Tabs>
-      <TabItem label="Astro `add` method">
-        ```sh
-        # Astro Quick mode
-        pnpm astro add @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-      <TabItem label="Manual pkg Install">
-        ```sh
-        # Manual Method
-        pnpm add @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-    </Tabs>
+   <Tabs>
+   <TabItem label="npm" icon="seti:npm">
+   ```sh title="Astro add method"
+   npx astro add @matthiesenxyz/astro-ghostcms
+   ```
 
-  </TabItem>
-  <TabItem label="yarn">
-    ```sh
-    yarn create astro
-    # Create Empty Install with standard typescript
-    # Then Delete entire `pages` folder under `/src/`
-    ```
-    
-Then run the following to install the package!
+   ```sh title="Manual pkg Install"
+   npm install @matthiesenxyz/astro-ghostcms
+   ```
+   </TabItem>
+   <TabItem label="pnpm" icon="pnpm">
+   ```sh title="Astro add method"
+   pnpm astro add @matthiesenxyz/astro-ghostcms
+   ```
+   
+   ```sh title="Manual pkg Install"
+   pnpm add @matthiesenxyz/astro-ghostcms
+   ```
+   </TabItem>
+   <TabItem label="yarn" icon="seti:yarn">
+   ```sh title="Astro add method"
+   yarn astro add @matthiesenxyz/astro-ghostcms
+   ```
+   
+   ```sh title="Manual pkg Install"
+   yarn add @matthiesenxyz/astro-ghostcms
+   ```
+   </TabItem>
+   </Tabs>
 
-    <Tabs>
-      <TabItem label="Astro `add` method">
-        ```sh
-        # Astro Quick mode
-        yarn astro add @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-      <TabItem label="Manual pkg Install">
-        ```sh
-        # Manual Method
-        yarn add @matthiesenxyz/astro-ghostcms
-        ```
-      </TabItem>
-    </Tabs>
+3. Then set your `.env` variables to look like this:
 
-  </TabItem>
-</Tabs>
+   <Aside> As of v3.3.0 the `CONTENT_API_URL` is no longer required in your `.env` file.  You can set it in your `astro.config.mjs` file as `ghostURL` or as an environment variable.  The `astro.config.mjs` file will take priority. </Aside>
 
+   ```ansi frame="code" title=".env"
+   [1;31mCONTENT_API_KEY[0m=[33ma33da3965a3a9fb2c6b3f63b48
+   ```
 
-Then set your `astro.config.mjs` to look like this:
+4. Then set your `astro.config.mjs` to look like this:
 
-```ts frame="code" title="astro.config.mjs"
-import { defineConfig } from "astro/config";
-import GhostCMS from '@matthiesenxyz/astro-ghostcms';
+   ```ts frame="code" title="astro.config.mjs" wrap
+   import { defineConfig } from "astro/config";
+   import astroGhostCMS from '@matthiesenxyz/astro-ghostcms';
 
-// https://astro.build/config
-export default defineConfig({
-  site: "https://YOUR-DOMAIN-HERE.com"
-  integrations: [GhostCMS({
-    // You can either set your ghostURL here or as a `.env`/environment variable 
-    // THIS WILL TAKE PRIORITY
-    ghostURL: "https://ghostdemo.matthiesen.xyz",
-  })],
-});
-```
+   // https://astro.build/config
+   export default defineConfig({
+     site: "https://YOUR-DOMAIN-HERE.com"
+     integrations: [
+       astroGhostCMS({
+         // `ghostURL` Recommended to set here, Can also set in .env as CONTENT_API_URL
+         ghostURL: "https://ghostdemo.matthiesen.xyz", 
+       })
+     ],
+   });
+   ```
 
-
-## Setup `.env` variables
-
-```ansi frame="code" title=".env"
-[1;31mCONTENT_API_KEY[0m=[33ma33da3965a3a9fb2c6b3f63b48
-[1;31mCONTENT_API_URL[0m=[33mhttps://ghostdemo.matthiesen.xyz
-```
-
-<Aside>
-***When you deploy your install dont forget to set the above ENVIRONMENT VARIABLES!***
-</Aside>
+</Steps>
 
 ## Created Routes
 

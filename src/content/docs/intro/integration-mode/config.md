@@ -5,54 +5,39 @@ sidebar:
   order: 3
 ---
 
-Theme config option in `astro.config.mjs` looks like this:
+`Astro-GhostCMS` config options in `astro.config.mjs` looks like this:
 
-```ts frame="code" title="astro.config.mjs"
+```ts frame="code" title="astro.config.mjs" wrap
 import { defineConfig } from "astro/config";
-import GhostCMS from '@matthiesenxyz/astro-ghostcms';
+import astroGhostCMS from '@matthiesenxyz/astro-ghostcms';
 
+// https://astro.build/config
 export default defineConfig({
-  site: "https://YOUR-DOMAIN-HERE.com",
+  site: "https://YOUR-DOMAIN-HERE.com"
   integrations: [
-    GhostCMS({
-        // You can either set your ghostURL here or as a `.env`/environment variable
-			  ghostURL: "https://ghostdemo.matthiesen.xyz",
-        // Disables default 404 page route
-			  disable404: false,
-        // Disables default RSS page route and @astrojs/rss integration
-			  disableRSS: false,
-        // Disables default satori OpenGraph generation
-        disableSatoriOG: false,
-        // *OPTIONAL* THIS Option allows the user to disable default route
-        // injections, disabling the default layout and theme all together.
-        // Allowing the user to still use integration features while building
-        // off of the included API functions
-        disableRouteInjection: false, // DEFAULT VALUE
-        // *OPTIONAL* Setting this to true will disable the extra info logs
-        disableConsoleOutput: false, // DEFAULT VALUE
-        // *OPTIONAL* THIS IS THE DEFAULT VALUE
-        theme: '@matthiesenxyz/astro-ghostcms-theme-default',
-        // THIS IS TO SHOW SUPPORTED FEATURES FOR MORE INFO SEE
-        // npm:@astrojs/sitemap package README
+    astroGhostCMS({
+      // Config Options
+      ghostURL: "http://example.com", // Recommended to set here, Can also set in .env as CONTENT_API_URL
+      ThemeProvider: { // Allows you to pass config options to our ThemeProvider if enabled.
+        disableThemeProvider: false, // OPTIONAL - Default False
+        theme: "@matthiesenxyz/astro-ghostcms-theme-default", // OPTIONAL - Default Theme shown.
+      };
+      disableDefault404: false, // Allows the user to disable the default `/404 page, to be able to create their own under `/src/pages/404.astro`.
+      enableRSSFeed: true, // Allows the user to Enable or disable RSS Feed Generation. Default: true
+      enableOGImages: true, // Allows the user to Enable or disable OG Image Generation. Default: true
+      verbose: false, // Show the full Log output from All parts of Astro-GhostCMS
+      Integrations: {
+        // This allows user config passthrough from Astro-GhostCMS to the Included Integrations
+        robotsTxt: {
+          // OPTIONAL
+          // ADVANCED USAGE - https://www.npmjs.com/package/astro-robots-txt#configuration
+        }, 
         sitemap: {
-          customPages: // OPTIONAL - string[]
-          entryLimit: // OPTIONAL - number
-        }
-        // THIS IS TO SHOW SUPPORTED FEATURES FOR MORE INFO SEE
-        // npm:astro-robots-txt package README
-        robotstxt: {
-          host: // OPTIONAL - string
-          sitemap: // OPTIONAL - string
-          sitemapBaseFileName: // OPTIONAL - string
-          policy: { // OPTIONAL
-            userAgent: // REQUIRED IF POLICY IS PRESENT - string
-            allow: // OPTIONAL - string
-            disallow: //OPTIONAL - string
-            cleanParam: //OPTIONAL - string
-            crawlDelay: //OPTIONAL - number
-          }
-        }
-    }),
+          // OPTIONAL
+          // ADVANCED USAGE - https://docs.astro.build/en/guides/integrations-guide/sitemap
+        },
+      },
+    })
   ],
 });
 ```

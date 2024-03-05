@@ -2,14 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import tailwind from '@astrojs/tailwind';
-import fs from 'node:fs';
-import { ExpressiveCodeTheme } from '@astrojs/starlight/expressive-code';
 import robotsTxt from 'astro-robots-txt';
-
-const hThemeFile = './houston.jsonc';
-const hFileSync = fs.readFileSync(
-  new URL(hThemeFile, import.meta.url),'utf-8');
-const houston = ExpressiveCodeTheme.fromJSONString(hFileSync);
+import houston from './src/styles/houston.json'
 
 // https://astro.build/config
 export default defineConfig({
@@ -50,20 +44,21 @@ export default defineConfig({
 			sidebar: [ { 
 				label: 'Introduction', items: [
 					{ label: 'Getting Started', link: '/intro' },
-					{ label: 'Normal Mode',	badge: { text: 'Easy', variant: 'default' }, autogenerate: { directory: '/intro/integration-mode' }, },
-					{ label: 'API Mode', collapsed: true, badge: { text: 'Advanced', variant: 'default'	}, autogenerate: { directory: '/intro/api-mode'	} },
+					{ label: 'Main Integration', autogenerate: { directory: '/intro/integration-mode' }, },
 					{ label: 'Starlight Plugin', badge: { text: 'NEW', variant: 'success' }, autogenerate: { directory: '/intro/starlight' } },
 					],
 				}, {
+				label: 'Advanced Usage', badge: { text: 'Coming Soon', variant: 'caution' }, autogenerate: { directory: '/advanced' },
+				}, {
 				label: 'Themes', items: [
-					{ label: 'Default Theme', autogenerate: { directory: '/themes/default' }, },
-					{ label: 'Catppuccin', autogenerate: { directory: '/themes/catppuccin' }, },
-					{ label: 'Brutal by Elian',	autogenerate: {	directory: '/themes/brutal'	}, },
+					{ label: 'Default Theme', collapsed: true, autogenerate: { directory: '/themes/default' }, },
+					{ label: 'Catppuccin', collapsed: true, autogenerate: { directory: '/themes/catppuccin' }, },
+					{ label: 'Brutal by Elian',	collapsed: true, autogenerate: {	directory: '/themes/brutal'	}, },
 					],
 				}, {
 				label: 'Tools & Extras',
 				items: [
-					{ label: 'Ghost Render Util', collapsed: true, badge: { text: 'NEW', variant: 'success' }, autogenerate: { directory: '/tools/contentrender' } },
+					{ label: 'Ghost Render Util', collapsed: true, autogenerate: { directory: '/tools/contentrender' } },
 					],
 				}, { 
 				label: 'Changelogs', autogenerate: { directory: '/changelogs' },
