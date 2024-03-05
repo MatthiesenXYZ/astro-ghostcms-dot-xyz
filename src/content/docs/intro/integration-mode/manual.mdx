@@ -7,7 +7,7 @@ sidebar:
     text: Astro Method
     variant: tip
 ---
-import { Aside, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem, Steps, FileTree } from '@astrojs/starlight/components';
 
 ## Install
 
@@ -92,6 +92,37 @@ The Best way to install Astro-GhostCMS is from a fresh install.  To get started 
      ],
    });
    ```
+
+5. This is how your file structure should look:
+
+   <FileTree>
+   - your-awesome-project/
+     - public/
+     - src/
+     - .env
+     - astro.config.mjs
+     - package.json
+   </FileTree>
+
+6. Then run the following to start your Astro server:
+
+   <Tabs>
+   <TabItem label="npm" icon="seti:npm">
+   ```sh
+   npm run dev
+   ```
+   </TabItem>
+   <TabItem label="pnpm" icon="pnpm">
+   ```sh
+   pnpm run dev
+   ```
+   </TabItem>
+   <TabItem label="yarn" icon="seti:yarn">
+   ```sh
+   yarn run dev
+   ```
+   </TabItem>
+   </Tabs>
 
 </Steps>
 
