@@ -58,7 +58,7 @@ export default defineConfig({
 				}, {
 				label: 'Tools & Extras',
 				items: [
-					{ label: 'Ghost Render Util', collapsed: true, autogenerate: { directory: '/tools/contentrender' } },
+					{ label: 'Ghost Render Util', badge: { text: 'Deprecated', variant: 'danger' }, collapsed: true, autogenerate: { directory: '/tools/contentrender' } },
 					],
 				}, { 
 				label: 'Changelogs', autogenerate: { directory: '/changelogs' },
