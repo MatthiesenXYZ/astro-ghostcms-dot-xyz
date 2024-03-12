@@ -3,8 +3,7 @@ import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
 import robotsTxt from 'astro-robots-txt';
 import starlightBlog from 'starlight-blog';
-import starlightLinksValidator from 'starlight-links-validator'
-import houston from './src/styles/houston.json'
+import houston from './src/styles/houston.json';
 
 // https://astro.build/config
 export default defineConfig({
