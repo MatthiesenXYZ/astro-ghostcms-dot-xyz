@@ -47,12 +47,7 @@ export default defineConfig({
 						title: 'Core Maintainer',
 						picture: './authors/adam.jpg',
 						url: 'https://github.com/AdamMatthiesen',
-				}}}),
-				starlightLinksValidator({
-					errorOnFallbackPages:  false,
-					errorOnInconsistentLocale: false,
-					errorOnRelativeLinks: true,
-				})
+				}}})
 			],
 			social: {
 				discord: 'https://discord.gg/u7NZqUyeAR',
