@@ -1,5 +1,6 @@
 ---
-import Markdown from '../remoterenderutil/RemoteMarkdown.astro';
+import { Markdown } from 'astro-remote';
+import markedFootnote from 'marked-footnote';
 import CodeSpan from '../remotecomponets/CodeSpan.astro';
 import CodeBlock from '../remotecomponets/CodeBlock.astro';
 import Heading from '../remotecomponets/Heading.astro';
@@ -10,4 +11,5 @@ const readme = await fetch('https://raw.githubusercontent.com/MatthiesenXYZ/astr
 <Markdown
     content={readme}
     components={{ Heading, CodeBlock, CodeSpan, Note }}
+    marked={{ extensions: [markedFootnote()] }}
     />
