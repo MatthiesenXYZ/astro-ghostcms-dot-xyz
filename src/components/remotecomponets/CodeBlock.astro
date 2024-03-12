@@ -3,4 +3,4 @@ import { Code } from "@astrojs/starlight/components"
 const { lang, code, ...props } = Astro.props;
 ---
 
-<Code code={code} lang={lang}/>
+<Code code={code} lang={lang} {...props} />

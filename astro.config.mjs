@@ -62,10 +62,6 @@ export default defineConfig({
 							directory: '/intro/integration-mode' 
 						}, },
 					{ label: 'Starlight Plugin', 
-						badge: { 
-							text: 'NEW', 
-							variant: 'success' 
-						}, 
 						autogenerate: { 
 							directory: '/intro/starlight' 
 						} } ] }, 

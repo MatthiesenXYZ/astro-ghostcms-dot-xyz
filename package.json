@@ -9,6 +9,10 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "devDependencies": {
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "p-retry": "^6.2.0"
+  },
   "dependencies": {
     "@astrojs/check": "^0.5.7",
     "@astrojs/starlight": "^0.21.1",
