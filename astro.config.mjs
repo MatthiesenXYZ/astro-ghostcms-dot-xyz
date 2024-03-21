@@ -22,6 +22,16 @@ export default defineConfig({
 			editLink: { 
 				baseUrl: 'https://github.com/MatthiesenXYZ/astro-ghostcms-dot-xyz/edit/main/' 
 			},
+			head: [
+				{ 
+					tag: 'script',
+					attrs: {
+						src: 'https://umami.matthiesen.dev/script.js',
+						'data-website-id': '16e95f38-e91b-4341-9648-14ba88bed8c0',
+						defer: true,
+					},
+				},
+			],
 			lastUpdated: true,
 			favicon: 'spaceghost.png',
 			customCss: [ './src/styles/tailwind.css' ],
